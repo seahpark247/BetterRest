@@ -26,7 +26,7 @@ struct ContentView: View {
             
             let sleepTime = wakeUp - prediction.actualSleep
             
-            return "Your ideal bed time is..." + sleepTime.formatted(date: .omitted, time: .shortened)
+            return sleepTime.formatted(date: .omitted, time: .shortened)
         } catch {
             return "There was an error"
         }
@@ -69,9 +69,16 @@ struct ContentView: View {
                 }
                 
                 Section {
-                    Text(sleepResults)
-                        .font(.title3)
-                        .foregroundColor(.blue)
+                    HStack {
+                        Text("Your ideal bed time is...")
+                            .font(.title2)
+                        
+                        Spacer()
+                        
+                        Text(sleepResults)
+                            .font(.title3)
+                            .foregroundColor(.blue)
+                    }
                 }
             }
             .navigationTitle("BetterRest")
