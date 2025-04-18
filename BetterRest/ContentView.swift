@@ -42,7 +42,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             Form {
-                VStack(alignment: .leading, spacing: 0) {
+                VStack(alignment: .leading, spacing: 8) {
                     Text("When do you want to wake up?")
                         .font(.headline)
                     
@@ -76,7 +76,7 @@ struct ContentView: View {
                         Spacer()
                         
                         Text(sleepResults)
-                            .font(.title3)
+                            .font(.title3.bold())
                             .foregroundColor(.blue)
                     }
                 }
